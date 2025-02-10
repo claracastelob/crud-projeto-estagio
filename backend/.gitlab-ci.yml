@@ -1,0 +1,17 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: python:3.13
+  variables:
+    DATABASE_URL: $DATABASE_URL  
+
+  before_script:
+    - apt update && apt install -y pipx  
+    - pipx ensurepath
+    - pipx install poetry  
+    - poetry install  
+
+  script:
+    - poetry run task test  
