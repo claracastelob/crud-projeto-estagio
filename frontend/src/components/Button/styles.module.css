@@ -1,0 +1,36 @@
+.Btn {
+    border-radius: 2rem;
+    padding: .35rem;
+    color: antiquewhite;
+    border-color: transparent;
+    box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.4);
+    margin-left: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.Btn:hover {
+    filter: brightness(0.9);
+    border-color: transparent;
+}
+
+.Btn:focus {
+    outline: none;
+    border-color: transparent;
+}
+
+.orange {
+    background-color: #fc4b2a;
+}
+
+.green {
+    background-color: #38c958;
+}
+
+.blue {
+    background-color: #00a9d4;
+}
+
+.red {
+    background-color: #c02c20;
+}

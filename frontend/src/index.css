@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #202020;
+}
+
+.BtnList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  gap: 10px;
+}
+
+.divider {
+  border-bottom: 1px solid #fff;
+  margin: 2rem;
+}

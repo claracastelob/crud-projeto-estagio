@@ -1,0 +1,31 @@
+services:
+  app_db:
+    image: mysql:latest
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # - /Users/clara.castelo/Documents/my.cnf:/etc/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: senhaRoot   
+      MYSQL_DATABASE: app_data
+      MYSQL_USER: usuario-dev
+      MYSQL_PASSWORD: senhaTeste
+    ports:
+      - "3306:3306"
+    # network_mode: host
+
+  app:
+    image: projeto_fastapi
+    entrypoint: ./entrypoint.sh
+    build: .
+    ports:
+      - "8000:8000"
+    # network_mode: host
+    depends_on:
+      - app_db
+    environment:
+      DATABASE_URL: mysql+mysqlconnector://usuario-dev:senhaTeste@app_db:3306/app_data
+
+volumes:
+  mysql-data:
+# networks:
+#   app-network:
