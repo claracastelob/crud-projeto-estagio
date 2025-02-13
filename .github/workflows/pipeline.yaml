@@ -42,4 +42,4 @@ jobs:
         run: cd frontend && npm install
 
       - name: Executar testes do frontend
-        run: npx vitest run
+        run: cd frontend && npx vitest run

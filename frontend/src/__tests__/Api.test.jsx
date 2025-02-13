@@ -1,8 +1,8 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import UserList from "../components/UserList/UserList";
-import api from "../services/api";
 import { describe, expect, vi, beforeEach, test } from "vitest";
+import UserList from "../components/UserList/UserList";
 import InputForm from "../components/InputForm";
+import api from "../services/api";
 
 vi.mock("../services/api", () => ({
   default: {
