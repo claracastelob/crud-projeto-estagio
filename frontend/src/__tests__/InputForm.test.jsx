@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from "@testing-library/react"
 import InputForm from '../components/InputForm';
+import { expect } from "vitest";
 
 test("testing if the create InputForm component is rendering how it should", () => {
     render(<InputForm action="create" onSubmit={() => {}}/> )

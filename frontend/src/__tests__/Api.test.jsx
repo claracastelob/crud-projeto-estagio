@@ -1,8 +1,7 @@
-/** @jsxImportSource react */
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import UserList from "../components/UserList/UserList";
 import api from "../services/api";
-import { describe, expect, vi } from "vitest";
+import { describe, expect, vi, beforeEach } from "vitest";
 import InputForm from "../components/InputForm";
 
 vi.mock("../services/api", () => ({

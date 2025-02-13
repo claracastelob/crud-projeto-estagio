@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import Button from "../components/Button"
 import App from "../App"
 import { fireEvent, render, screen } from "@testing-library/react"
-import { vi } from 'vitest';
+import { vi, expect } from 'vitest';
 
 test("testing if the buttons are rendering with the right text", () => {
     render(<App />)
