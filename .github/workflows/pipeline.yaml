@@ -41,5 +41,5 @@ jobs:
       - name: Instalar dependências do frontend
         run: cd frontend && npm install
 
-      - name: Executar os testes do frontend
+      - name: Executar testes do frontend
         run: npx vitest run
