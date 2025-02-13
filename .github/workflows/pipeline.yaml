@@ -2,7 +2,7 @@ name: Pipeline
 on: [push, pull_request]
 
 jobs:
-  test:
+  test-backend:
     runs-on: ubuntu-latest
 
     env:
@@ -25,3 +25,21 @@ jobs:
 
       - name: Executar os testes
         run: cd backend && poetry run task test
+  
+  test-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.9.0
+
+      - name: Instalar dependências do frontend
+        run: cd frontend && npm install
+
+      - name: Executar os testes do frontend
+        run: npx vitest run
